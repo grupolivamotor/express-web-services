@@ -3,6 +3,8 @@ import express from 'express'
 import lusca from 'lusca'
 import morgan from 'morgan'
 import routes from './routes'
+import swaggerUi from 'swagger-ui-express'
+import swaggerFile from '../swagger_output.json'
 
 const app = express()
 
@@ -13,5 +15,6 @@ app.use(lusca.xssProtection(true))
 app.use(morgan('dev'))
 
 app.use(routes)
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 export default app

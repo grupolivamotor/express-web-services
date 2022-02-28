@@ -5,6 +5,11 @@ import { Request, Response } from 'express'
  * @route GET /
  */
 export const getWebhook = (req: Request, res: Response) => {
+  /*
+    #swagger.tags = ['Walcu']
+    #swagger.description = 'Returns one specific user'
+    #swagger.parameters['id'] = { description: 'ID of the user. (required)' }
+  */
   res.status(200).send('Web Services Server')
 }
 
@@ -13,6 +18,7 @@ export const getWebhook = (req: Request, res: Response) => {
  * @route POST /
  */
 export const postWebhookSale = (req: Request, res: Response) => {
+  // #swagger.tags = ['Walcu']
   const data = req.body
 
   res.status(200).json(data)
@@ -22,13 +28,9 @@ export const postWebhookSale = (req: Request, res: Response) => {
  * Walcu WebHook Ventas
  * @route POST /
  */
-
 export const postWebhookBuy = (req: Request, res: Response) => {
-  const { data } = req.body
-  console.log(req.headers.host)
-  console.log(req.originalUrl)
+  // #swagger.tags = ['Walcu']
+  const data = req.body
 
-  console.log(data)
-
-  res.status(200).end()
+  res.status(200).json(data)
 }

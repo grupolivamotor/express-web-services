@@ -4,8 +4,8 @@ import { verifySignature } from '../middlewares/authWalcu'
 
 const walcuRoutes = Router()
 
-walcuRoutes.get('/webhook', walcuController.getWebhook)
-walcuRoutes.post('/webhook', [verifySignature], walcuController.postWebhookSale)
+walcuRoutes.get('/ventas', walcuController.getWebhook)
+walcuRoutes.post('/ventas', [verifySignature], walcuController.postWebhookSale)
 walcuRoutes.post('/compras/', walcuController.postWebhookBuy)
 
 
