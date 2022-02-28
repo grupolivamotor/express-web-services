@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { Request, Response } from 'express'
 import crypto, { BinaryLike } from 'crypto'
 
@@ -20,7 +21,7 @@ export const getWebhook = (req: Request, res: Response) => {
  * @route POST /
  */
 export const postWebhookSale = (req: Request, res: Response) => {
-  const { data } = req.body
+  const data = req.body
 
   const secret_key: BinaryLike = req.headers['x-walcu-webhook-signature']
   const hmac = crypto.createHmac('sha256', secret_key)
