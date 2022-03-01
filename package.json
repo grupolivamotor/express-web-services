@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env nodemon src/server.ts",
-    "start": "cross-env src/server.js",
+    "dev": "nodemon src/server.ts",
+    "start": "node dist/server.js",
     "build": "tsc",
     "test": "jest --forceExit --coverage --verbose",
     "watch-ts": "tsc -w",

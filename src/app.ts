@@ -6,7 +6,7 @@ import errorMiddleware from './middlewares/handleError'
 import { PORT, ENVIRONMENT } from './util/secrets'
 
 import swaggerUi from 'swagger-ui-express'
-import swaggerFile from '../swagger_output.json'
+import swaggerFile from './doc/swagger_output.json'
 
 const app = express()
 const prod = ENVIRONMENT === 'production'
