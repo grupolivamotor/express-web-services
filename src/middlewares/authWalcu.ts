@@ -1,5 +1,7 @@
-import 'dotenv/config'
 import { NextFunction, Request, Response } from 'express'
+import NotAuthorizedException from '../exceptions/NotAuthorizedException'
+import NotSignatureProvided from '../exceptions/NotSignatureProvided'
+import { WALCU_WEBHOOK_SALES } from '../util/secrets'
 import crypto from 'crypto'
 
 declare module 'http' {
@@ -10,21 +12,22 @@ declare module 'http' {
 
 export const verifySignature = (req: Request, res: Response, next: NextFunction) => {
   const data = req.body
+
   const walku_signature = req.headers['x-walcu-webhook-signature']
-  const secret_key: string = process.env.WALCU_WEBHOOK_BUY
+  const secret_key: string = WALCU_WEBHOOK_SALES
 
   const hmac = crypto.createHmac('sha256', secret_key)
   hmac.update(`${process.env.URL}/walcu/webhook.${JSON.stringify(data)}`)
   const signature = hmac.digest('base64')
 
   if (!walku_signature) {
-    res.status(403).send({ message: 'No signature provided' })
+    throw new NotSignatureProvided
   }
 
   if(walku_signature === signature) {
     next()
   } else {
-    res.status(401).send({ message: 'Unauthorized!' })
+    throw new NotAuthorizedException
   }
 
 }
