@@ -12,6 +12,8 @@ const app = express()
 const prod = ENVIRONMENT === 'production'
 
 app.set('port', PORT || 3000)
+app.set('trust proxy', true)
+
 app.use(express.json())
 app.use(lusca.xframe('SAMEORIGIN'))
 app.use(lusca.xssProtection(true))
