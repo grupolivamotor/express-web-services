@@ -13,7 +13,7 @@
       "description": "Endpoints"
     }
   ],
-  "schemes": ["http", "https"],
+  "schemes": ["https"],
   "consumes": ["application/json"],
   "produces": ["application/json"],
   "paths": {
@@ -157,6 +157,87 @@
           "example": "5e67ca23a51eef00048509a9"
         },
         "category": {
+          "type": "string",
+          "example": "car"
+        },
+        "car_model": {
+          "type": "string",
+          "example": "A110"
+        }
+      }
+    },
+    "PostAppraisal": {
+      "type": "object",
+      "properties": {
+        "postal_code": {
+          "type": "string",
+          "example": "43000"
+        },
+        "telephone": {
+          "type": "array",
+          "example": ["+34666123456"]
+        },
+        "origin": {
+          "type": "string",
+          "example": "exposición"
+        },
+        "community": {
+          "type": "string",
+          "example": "Catalunya"
+        },
+        "city": {
+          "type": "string",
+          "example": "Reus"
+        },
+        "name": {
+          "type": "string",
+          "example": "Jonh Doe"
+        },
+        "number_addres": {
+          "type": "string",
+          "example": "2"
+        },
+        "campaign": {
+          "type": "string",
+          "example": "sin campaña"
+        },
+        "province": {
+          "type": "string",
+          "example": "Tarragona"
+        },
+        "address": {
+          "type": "string",
+          "example": "Avinguda dels Mercaders"
+        },
+        "country": {
+          "type": "string",
+          "example": "España"
+        },
+        "VIN": {
+          "type": "string",
+          "example": "32423423j4hk342h324"
+        },
+        "assigned_to": {
+          "type": "string",
+          "example": "5e67ca23a51eef00048509a9"
+        },
+        "car_brand": {
+          "type": "string",
+          "example": "ALPINE"
+        },
+        "email": {
+          "type": "array",
+          "example": ["test@test.com"]
+        },
+        "year": {
+          "type": "number",
+          "example": 2017
+        },
+        "lead_id": {
+          "type": "string",
+          "example": "5e67ca23a51eef00048509a9"
+        },
+        "plate": {
           "type": "string",
           "example": "car"
         },
