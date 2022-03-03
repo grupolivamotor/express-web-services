@@ -7,6 +7,7 @@ import { Request, Response } from 'express'
 
 export const postWebhookSale = (req: Request, res: Response) => {
   const data = req.body
+  console.log(data)
   res.status(200).json(data)
 }
 
@@ -17,5 +18,6 @@ export const postWebhookSale = (req: Request, res: Response) => {
 
 export const postWebhookAppraisals = (req: Request, res: Response) => {
   const data = req.body
+  console.log(data)
   res.status(200).json(data)
 }
