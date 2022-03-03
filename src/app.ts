@@ -19,6 +19,11 @@ app.use(lusca.xframe('SAMEORIGIN'))
 app.use(lusca.xssProtection(true))
 app.use(prod ? morgan('combined') : morgan('dev'))
 
+app.get('/robots.txt', function (req, res) {
+  res.type('text/plain')
+  res.send('User-agent: *\nDisallow: /')
+})
+
 app.use(routes)
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 app.use(errorMiddleware)
