@@ -17,7 +17,7 @@ export const verifySignature = (req: Request, res: Response, next: NextFunction)
   const secret_key: string = WALCU_WEBHOOK_SALES
 
   const hmac = crypto.createHmac('sha256', secret_key)
-  hmac.update(`${process.env.URL}/walcu/webhook.${JSON.stringify(data)}`)
+  hmac.update(`${process.env.URL}/api/v1/walcu/sales.${JSON.stringify(data)}`)
   const signature = hmac.digest('base64')
 
   if (!walku_signature) {
