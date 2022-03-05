@@ -5,8 +5,8 @@ import HttpException from '../../src/exceptions/HttpException'
 describe('Error handler middleware', () => {
   const error: HttpException = {
     name: 'error',
-    status: 500,
-    message: 'string',
+    status: undefined,
+    message: undefined,
   }
   let mockRequest: Partial<Request>
   let mockResponse: Partial<Response>
@@ -27,7 +27,6 @@ describe('Error handler middleware', () => {
       mockResponse as Response,
       nextFunction
     )
-
     expect(mockResponse.status).toHaveBeenCalledWith(500)
     expect(nextFunction).not.toHaveBeenCalled()
   })
