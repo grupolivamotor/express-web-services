@@ -10,3 +10,9 @@ describe('GET /', () => {
     request(app).get('/any').expect(404, done)
   })
 })
+
+describe('GET /robots.txt', () => {
+  it('should return 200 OK', (done) => {
+    request(app).get('/robots.txt').expect(200, done)
+  })
+})
