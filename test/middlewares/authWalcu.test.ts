@@ -76,6 +76,9 @@ describe('Middleware to authentication Walcu', () => {
           'f4ONkpSzQg8Ul5pzAvf+ywDnDDtdHJdte3h5wSvCXgM=',
       },
       url: 'localhost:5005',
+      route: {
+        path: '/sales'
+      },
       body: {
         nombre: 'GERARD ÁLVAREZ',
         telefono: ['+34689137955'],
