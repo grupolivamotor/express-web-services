@@ -65,7 +65,7 @@
             "in": "body",
             "description": "Appraisal to insert",
             "schema": {
-              "$ref": "#/definitions/PostSale",
+              "$ref": "#/definitions/PostAppraisal",
               "required": []
             }
           }
@@ -163,6 +163,14 @@
         "car_model": {
           "type": "string",
           "example": "A110"
+        },
+        "VIN": {
+          "type": "string",
+          "example": "VF72CYHSMN4104413"
+        },
+        "plate": {
+          "type": "string",
+          "example": "1235LKB"
         }
       }
     },
@@ -215,7 +223,7 @@
         },
         "VIN": {
           "type": "string",
-          "example": "32423423j4hk342h324"
+          "example": "WVGZZZ5NZHW942579"
         },
         "assigned_to": {
           "type": "string",
@@ -239,7 +247,7 @@
         },
         "plate": {
           "type": "string",
-          "example": "car"
+          "example": "1234LKB"
         },
         "car_model": {
           "type": "string",
