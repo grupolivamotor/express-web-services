@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express'
 import NotAuthorizedException from '../exceptions/NotAuthorizedException'
 import NotSignatureProvided from '../exceptions/NotSignatureProvided'
-import HttpException from '../../src/exceptions/HttpException'
+import HttpException from '../exceptions/HttpException'
 import { WALCU_WEBHOOK_SALES, WALCU_WEBHOOK_APPRAISALS } from '../util/secrets'
 import MyCrypto from '../util/crypto'
 
