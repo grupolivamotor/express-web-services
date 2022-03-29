@@ -28,7 +28,7 @@ export const postWebhookSale = async (req: Request, res: Response) => {
  * @route POST /
  */
 
-export const postWebhookAppraisals = (req: Request, res: Response) => {
+export const postWebhookAppraisals = async (req: Request, res: Response) => {
   const data = req.body as unknown as Appraisal
 
   const result = axios.post(`${KULTEO_API_URL}/appraisals`, data, {
