@@ -1,46 +1,46 @@
 export type Appraisal = {
-  postal_code: string
-  telephone: Array<string>  /* required */
-  origin: string
-  community: string
-  city: string
   name: string  /* required */
-  number_address: string
-  campaign: string
-  province: string
-  address: string
-  country: string
-  VIN: string
-  assigned_to: string
-  car_brand: string
+  telephone: Array<string>  /* required */
   email: Array<string>  /* required */
-  year: number
-  lead_id: string
+  address: string
+  number_address: string
+  postal_code: string
+  city: string
+  province: string
+  community: string
+  country: string
+  assigned_to: string
+  VIN: string
   plate: string /* required */
+  year: number
+  car_brand: string
   car_model: string
+  origin: string
+  campaign: string
+  lead_id: string
   client_type: string
 }
 
 export type Sale = {
-  postal_code: string
-  campaign: string
-  telephone: Array<string>  /* required */
-  car_type: string
-  origin: string
-  community: string
-  city: string
   name: string  /* required */
-  number_address: string
-  client_type: string /* required */
-  province: string
+  telephone: Array<string>  /* required */
+  email: Array<string>  /* required */
   address: string
+  number_address: string
+  postal_code: string
+  city: string
+  community: string
+  province: string
   country: string
   assigned_to: string
-  car_brand: string
-  email: Array<string>  /* required */
-  lead_id: string
+  car_type: string
+  client_type: string /* required */
   category: string
+  car_brand: string
   car_model: string
+  origin: string
+  campaign: string
+  lead_id: string
   VIN: string /* required */
   plate: string
 }
