@@ -10,7 +10,7 @@ export type Appraisal = {
   community: string
   country: string
   assigned_to: string
-  VIN: string
+  VIN: string /* required */
   plate: string /* required */
   year: number
   car_brand: string
@@ -42,5 +42,5 @@ export type Sale = {
   campaign: string
   lead_id: string
   VIN: string /* required */
-  plate: string
+  plate: string /* required */
 }

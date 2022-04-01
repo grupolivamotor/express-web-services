@@ -173,7 +173,7 @@
           "example": "1235LKB"
         }
       },
-      "required": ["name", "telephone", "email", "client_type", "VIN"]
+      "required": ["name", "telephone", "email", "client_type", "VIN", "plate"]
     },
     "PostAppraisal": {
       "type": "object",
@@ -259,7 +259,7 @@
           "example": "B2C"
         }
       },
-      "required": ["name", "telephone", "email", "client_type", "plate"]
+      "required": ["name", "telephone", "email", "client_type", "plate", "VIN"]
     },
     "InvalidResponse": {
       "type": "object",
