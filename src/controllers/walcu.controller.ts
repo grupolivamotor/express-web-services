@@ -9,18 +9,23 @@ import axios from 'axios'
  */
 
 export const postWebhookSale = async (req: Request, res: Response) => {
-  const data = req.body as unknown as Sale
-
-  const result = await axios.post(`${KULTEO_API_URL}/sales`, data, {
-    auth: {
-      username: KULTEO_API_USERNAME,
-      password: KULTEO_API_PASS
-    }
-  })
-
-  console.log(result)
-
-  res.status(200).json(result)
+  try {
+    const data = req.body as unknown as Sale
+  
+    const result = await axios.post(`${KULTEO_API_URL}/sales`, data, {
+      auth: {
+        username: KULTEO_API_USERNAME,
+        password: KULTEO_API_PASS
+      }
+    })
+  
+    console.log(result)
+  
+    res.status(200).json(result)
+  } catch (error) {
+    console.log(error)
+    res.status(400).json(error)
+  }
 }
 
 /**
@@ -29,16 +34,21 @@ export const postWebhookSale = async (req: Request, res: Response) => {
  */
 
 export const postWebhookAppraisals = async (req: Request, res: Response) => {
-  const data = req.body as unknown as Appraisal
-
-  const result = axios.post(`${KULTEO_API_URL}/appraisals`, data, {
-    auth: {
-      username: KULTEO_API_USERNAME,
-      password: KULTEO_API_PASS,
-    },
-  })
-
-  console.log(result)
+  try {
+    const data = req.body as unknown as Appraisal
   
-  res.status(200).json(result)
+    const result = axios.post(`${KULTEO_API_URL}/appraisals`, data, {
+      auth: {
+        username: KULTEO_API_USERNAME,
+        password: KULTEO_API_PASS,
+      },
+    })
+  
+    console.log(result)
+    
+    res.status(200).json(result)
+  } catch (error) {
+    console.log(error)
+    res.status(400).send(error)
+  }
 }
