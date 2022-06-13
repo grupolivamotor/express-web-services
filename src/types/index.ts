@@ -1,7 +1,7 @@
 export type Appraisal = {
-  name: string  /* required */
-  telephone: Array<string>  /* required */
-  email: Array<string>  /* required */
+  name: string /* required */
+  telephone: Array<string> /* required */
+  email: Array<string> /* required */
   address: string
   number_address: string
   postal_code: string
@@ -19,6 +19,12 @@ export type Appraisal = {
   campaign: string
   lead_id: string
   client_type: string
+  car_fuel: string
+  car_geartype: string
+  car_mileage: number
+  car_version: string
+  car_color: string
+  price_value: number
 }
 
 export type Sale = {
