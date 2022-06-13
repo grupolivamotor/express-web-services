@@ -21,10 +21,10 @@ export type Appraisal = {
   client_type: string
   car_fuel: string
   car_geartype: string
-  car_mileage: number
+  car_mileage: string
   car_version: string
   car_color: string
-  price_value: number
+  price_value: string
 }
 
 export type Sale = {
