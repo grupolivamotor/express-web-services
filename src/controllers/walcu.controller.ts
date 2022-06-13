@@ -37,6 +37,9 @@ export const postWebhookAppraisals = async (req: Request, res: Response) => {
   try {
     const data = req.body as unknown as Appraisal
   
+    data.car_mileage = data.car_mileage.toString()
+    data.price_value = data.price_value.toString()
+
     const result = await axios.post(`${KULTEO_API_URL}/appraisals`, data, {
       auth: {
         username: KULTEO_API_USERNAME,
