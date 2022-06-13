@@ -37,7 +37,7 @@ export const postWebhookAppraisals = async (req: Request, res: Response) => {
   try {
     const data = req.body as unknown as Appraisal
   
-    const result = axios.post(`${KULTEO_API_URL}/appraisals`, data, {
+    const result = await axios.post(`${KULTEO_API_URL}/appraisals`, data, {
       auth: {
         username: KULTEO_API_USERNAME,
         password: KULTEO_API_PASS,
